@@ -9,11 +9,11 @@ class GalleryModel extends Model
     protected $primaryKey = "id";
     protected $table = "upload";
     protected $DBGroup = "default";
-    protected $allowedFields = ['name', 'file'];
+    protected $allowedFields = ['username', 'image'];
     protected $useTimestamps = true;
     protected $validationRules = [
-        'name'     => 'required|alpha_numeric|min_length[3]',
-        'file'        => 'required'
+        'username'     => 'required',
+        'image'        => 'uploaded[image]',
        
     ];
 

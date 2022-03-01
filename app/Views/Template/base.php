@@ -20,16 +20,32 @@ use App\Controllers\Home;
 
   <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">Gallery</a>
+  <?php 
+  
+  if(session()->get("sucess")){
+    ?>
+    <h3><?= session()->get("sucess")  ?></h3>
+    <?php
+
+  }
+  if(session()->get("error")){
+    ?>
+    <h3><?= session()->get("error")?></h3>
+    <?php
+  }
+  
+  ?>
 
   <form class="form-inline" method="POST" enctype ="multipart/form-data"  action="<?= base_url('Gallery/insert')?>">
 
-    <input class="form-control mr-sm-2" name="name" type="text" placeholder="Enter The Name" aria-label="">
-    <input  type="file" name="file" placeholder="Upload File" aria-label="Upload">
-    <button class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit">Create</button>
+    <input class="form-control mr-sm-2" name="username" type="text" placeholder="Enter The Name" aria-label="">
+    <input  type="file" name="image" class="form-control" requried/ >
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit">Create</button> -->
+    <button type ="submit" class="btn btn-primary">submit</button>
  
-  </form>
+  
 </nav>
-
+</form>
                            
 
                           <div class="container">
