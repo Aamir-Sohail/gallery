@@ -83,6 +83,6 @@ class Gallery extends BaseController
             $gallery = new GalleryModel();
 
             $gallery->delete($id);
-            return view('welcome_message');
+             return view('welcome_message');
         }
     }

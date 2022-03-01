@@ -13,7 +13,7 @@ class GalleryModel extends Model
     protected $useTimestamps = true;
     protected $validationRules = [
         'username'     => 'required',
-        'image'        => 'uploaded[image]',
+        'image'        => 'uploaded[file_name]',
        
     ];
 
