@@ -23,18 +23,19 @@ Gallery
                 </tr>
             </thead>
             <tbody>
-            
+                <?php foreach ($gallery  as $row) :?>
+              
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo  $row['id'];?></td>
+                    <td><?php echo  $row['name'];?></td>
+                    <td><?php echo  $row['file'];?></td>
 
                     
 
-                    <td><a href="" class="btn btn-danger">Delete</td>
+                    <td><a href="<?php base_url('Gallery/delete/'.$row['id'])?>" class="btn btn-danger">Delete</td>
                 </tr>
-               
+               <?php endforeach; ?>
                
             </tbody>
         </table>
