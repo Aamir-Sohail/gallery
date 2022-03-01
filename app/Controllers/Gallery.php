@@ -39,7 +39,7 @@ class Gallery extends BaseController
                 'image' => $imageName,
             ];
 
-
+    
             $gallery->save($data);
             // var_dump($gallery->errors());
             return view('welcome_message');
