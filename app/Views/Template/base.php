@@ -25,7 +25,7 @@ use App\Controllers\Home;
   if(session()->get("sucess")){
     ?>
     <h3><?= session()->get("sucess")  ?></h3>
-    <?php
+    <?php 
 
   }
   if(session()->get("error")){
@@ -39,7 +39,7 @@ use App\Controllers\Home;
   <form class="form-inline" method="POST" enctype ="multipart/form-data"  action="<?= base_url('Gallery/insert')?>">
 
     <input class="form-control mr-sm-2" name="username" type="text" placeholder="Enter The Name" aria-label="">
-    <input  type="file" name="image" class="form-control" requried/ >
+    <input  type="file" name="image" class="form-control" >
     <!-- <button class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit">Create</button> -->
     <button type ="submit" class="btn btn-primary">submit</button>
  
