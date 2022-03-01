@@ -36,35 +36,22 @@ class Gallery extends BaseController
 
             $data = [
                 'username' => $this->request->getPost('username'),
-                'image' => $imageName,
+                'image' =>   $this->request->getFile('image')
             ];
 
     
             $gallery->save($data);
-            // var_dump($gallery->errors());
+            var_dump($gallery->errors());
             return view('welcome_message');
         }
+    
+
+
+    
     }
 
 
-    //    $gallery = new  GalleryModel();
-    //    $file =$this->request->getFile('file');
-    //    if($file->isValid() && ! $file->hasMoved()){
-    //        $data =$file->getRandomName();
-    //        $file->move('uploads/', $data);
-    //    }
 
-    //     $data =[
-    //         'name'=>$this->request->getPost('name'),
-    //         'file'=>$this->request->getPost('file'),
-    //     ];
-    // //    $db= \Config\Database::connect();
-    // //    $builder =$db->table('upload');
-    // //    $builder->insert($data);
-
-    // $gallery = new GalleryModel();
-    // $gallery ->insert($data); 
-    // }
     public function Fetch()
     {
         $gallery = new GalleryModel();
@@ -82,5 +69,18 @@ class Gallery extends BaseController
 
         $gallery->delete($id);
         return view('welcome_message');
+ 
+    
+
+              
+   
+
+
     }
 }
+
+
+
+
+
+

@@ -35,7 +35,7 @@ $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
 $routes->post('gallery', 'Gallery::index');
 $routes->post('Gallery/insert', 'Gallery::insert');
-$routes->post('Gallery/delete/(:num)', 'Gallery::delete');
+// $routes->post('Gallery/delete/(:num)', 'Gallery::delete');
 
 
 
