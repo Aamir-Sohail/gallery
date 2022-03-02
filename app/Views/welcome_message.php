@@ -1,4 +1,5 @@
 <?= $this->extend('Template/base') ?>
+<?php use App\Models\GalleryModel;?>
 <?php $this->section('title') ?>
 Gallery
 <?php $this->endSection() ?>
@@ -23,19 +24,23 @@ Gallery
                 </tr>
             </thead>
             <tbody>
-                
+                <?php if (isset($gallery)) { ?>
+                          <?php foreach($gallery as $image):?>
+     
+         
 
                 <tr>
-                    <td>  ['id']</td>
-                    <td>  ['name']</td>
-                    <td>  ['file']</td>
+                    <td> <?php $image['id']?></td>
+                    <td>  <?php $image['username'] ?></td>
+                    <td> <img src="<?="uploads/".$image['image']; ?>" height="100px" width="100px"  alt="image"></td>
 
                     
 
                     <td><a href="" class="btn btn-danger">Delete</td>
                 </tr>
                
-               
+               <?php endforeach ; ?>
+               <?php  } ?>
             </tbody>
         </table>
     </div>

@@ -41,8 +41,9 @@ class Gallery extends BaseController
 
     
             $gallery->save($data);
-            var_dump($gallery->errors());
-            return view('welcome_message');
+            // var_dump($gallery->errors());
+            return view('welcome_message',$data);
+
         }
     
 
@@ -55,9 +56,11 @@ class Gallery extends BaseController
     public function Fetch()
     {
         $gallery = new GalleryModel();
+        $data =$gallery->findAll();
+        // return view('home',$data);
 
-        $images = $gallery->findAll();
-        return view('welcome_message', $images);
+        // $images = $gallery->findAll();
+        return view('welcome_message',$data);
         // var_dump($data);
         // exit;
     }
